@@ -1,9 +1,11 @@
 package edu.gatech.gtevents.gtevents.feedscreen.myeventsfragment;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -11,12 +13,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import edu.gatech.gtevents.gtevents.R;
+import edu.gatech.gtevents.gtevents.eventdetailscreen.EventDetailActivity;
 import edu.gatech.gtevents.gtevents.shared.GTEvent;
 
 /**
  * An adapter that will get the events the user has created from the server.
  */
-public class MyEventsListAdapter extends BaseAdapter {
+public class MyEventsListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener {
 
     private List<GTEvent> eventList;
     private Context context;
@@ -94,5 +97,12 @@ public class MyEventsListAdapter extends BaseAdapter {
         eventList.add(g3);
 
         return true;
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        Intent intent = new Intent(context, EventDetailActivity.class);
+        intent.putExtra(EventDetailActivity.EVENT_KEY, eventList.get(position));
+        context.startActivity(intent);
     }
 }

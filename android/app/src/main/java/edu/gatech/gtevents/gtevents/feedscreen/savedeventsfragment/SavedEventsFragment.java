@@ -35,6 +35,7 @@ public class SavedEventsFragment extends Fragment implements View.OnClickListene
         View view = inflater.inflate(R.layout.fragment_saved_events, container, false);
 
         ((ListView) view.findViewById(R.id.savedEventsListView)).setAdapter(savedEventsListAdapter);
+        ((ListView) view.findViewById(R.id.savedEventsListView)).setOnItemClickListener(savedEventsListAdapter);
         return view;
     }
 

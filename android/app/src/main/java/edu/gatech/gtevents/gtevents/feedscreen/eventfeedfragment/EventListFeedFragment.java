@@ -37,6 +37,7 @@ public class EventListFeedFragment extends Fragment implements View.OnClickListe
         View view = inflater.inflate(R.layout.fragment_event_list_feed, container, false);
 
         ((ListView) view.findViewById(R.id.eventListView)).setAdapter(eventFeedListAdapter);
+        ((ListView) view.findViewById(R.id.eventListView)).setOnItemClickListener(eventFeedListAdapter);
         view.findViewById(R.id.createEventButton).setOnClickListener(this);
         return view;
     }

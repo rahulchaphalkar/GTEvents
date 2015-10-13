@@ -4,17 +4,30 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import edu.gatech.gtevents.gtevents.R;
+import edu.gatech.gtevents.gtevents.shared.GTEvent;
 
 /**
  * Main screen for displaying the details for an event.
  */
 public class EventDetailActivity extends AppCompatActivity {
+    public static final String EVENT_KEY = "EVENT";
+
+    private GTEvent event;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_event_detail_screen);
+        Bundle bundle = getIntent().getExtras();
+        event = bundle.getParcelable(EVENT_KEY);
+
+        getSupportActionBar().setTitle(event.name);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        populateFields();
     }
 
     @Override
@@ -26,16 +39,29 @@ public class EventDetailActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case android.R.id.home:
+                finish();
+                return true;
+
+            case R.id.action_settings:
+                // TODO (acalabrese): Do something like adding a settings screen.
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Fills in the text fields with the appropriate values.
+     */
+    private void populateFields() {
+        ((TextView) findViewById(R.id.eventNameTextView)).setText(event.name);
+        ((TextView) findViewById(R.id.eventDescriptionTextView)).setText(event.description);
+        ((TextView) findViewById(R.id.eventTimeTextView)).setText(event.time);
+        ((TextView) findViewById(R.id.eventOrganizationTextView)).setText(event.organization);
+        ((TextView) findViewById(R.id.eventLocationTextView)).setText(event.location);
     }
 }

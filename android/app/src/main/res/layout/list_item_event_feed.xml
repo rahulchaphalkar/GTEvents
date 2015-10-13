@@ -8,6 +8,8 @@
         android:id="@+id/likeButton"
         android:src="@drawable/thumbs_up_icon"
         android:layout_alignParentRight="true"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:scaleType="centerCrop" />
 
     <TextView

@@ -35,6 +35,7 @@ public class MyEventsFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_my_events, container, false);
 
         ((ListView) view.findViewById(R.id.myEventsListView)).setAdapter(eventsListAdapter);
+        ((ListView) view.findViewById(R.id.myEventsListView)).setOnItemClickListener(eventsListAdapter);
         return view;
     }
 
