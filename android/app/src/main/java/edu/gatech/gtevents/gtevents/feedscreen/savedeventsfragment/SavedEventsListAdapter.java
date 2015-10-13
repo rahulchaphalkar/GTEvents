@@ -1,4 +1,4 @@
-package edu.gatech.gtevents.gtevents.feedscreen.myeventsfragment;
+package edu.gatech.gtevents.gtevents.feedscreen.savedeventsfragment;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,14 +14,14 @@ import edu.gatech.gtevents.gtevents.R;
 import edu.gatech.gtevents.gtevents.shared.GTEvent;
 
 /**
- * An adapter that will get the events the user has created from the server.
+ * An adapter for dealing with the saved events and populating the list view.
  */
-public class MyEventsListAdapter extends BaseAdapter {
+public class SavedEventsListAdapter extends BaseAdapter {
 
     private List<GTEvent> eventList;
     private Context context;
 
-    public MyEventsListAdapter(Context context) {
+    public SavedEventsListAdapter(Context context) {
         eventList = new ArrayList<>();
         this.context = context;
         refreshList();
@@ -47,7 +47,7 @@ public class MyEventsListAdapter extends BaseAdapter {
         if (convertView==null) {
             LayoutInflater inflater =
                     (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.list_item_my_event, parent, false);
+            convertView = inflater.inflate(R.layout.list_item_saved_events, parent, false);
         }
 
         GTEvent event = (GTEvent) getItem(position);
@@ -56,6 +56,8 @@ public class MyEventsListAdapter extends BaseAdapter {
         ((TextView) convertView.findViewById(
                 R.id.eventDescriptionTextView)).setText(event.description);
         ((TextView) convertView.findViewById(R.id.eventTimeTextView)).setText(event.time);
+        ((TextView) convertView.findViewById(
+                R.id.eventOrganizationTextView)).setText(event.organization);
 
         return convertView;
     }
@@ -70,19 +72,19 @@ public class MyEventsListAdapter extends BaseAdapter {
         GTEvent g2 = new GTEvent();
         GTEvent g3 = new GTEvent();
 
-        g1.name = "My Event 1";
+        g1.name = "Saved Event 1";
         g1.time = "1:00";
         g1.description = "Test Description 1";
         g1.location = "COC";
         g1.organization = "Housing";
 
-        g2.name = "My Event 2";
+        g2.name = "Saved Event 2";
         g2.time = "2:00";
         g2.description = "Test Description 2";
         g2.location = "CULC";
         g2.organization = "AAA";
 
-        g3.name = "My Event 3";
+        g3.name = "Saved Event 3";
         g3.time = "3:00";
         g3.description = "Test Description 3";
         g3.location = "Harris";
