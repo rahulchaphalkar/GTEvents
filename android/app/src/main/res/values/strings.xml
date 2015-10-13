@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GT Events</string>
+    <string name="action_settings">Settings</string>
+
+    <!-- Login Screen Values. -->
+
+    <!-- Username label. -->
+    <string name="username_label">Username :</string>
+
+    <!-- Password label. -->
+    <string name="password_label">Password :</string>
+
+    <!-- Login button label. -->
+    <string name="login_label">Login</string>
+</resources>
