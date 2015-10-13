@@ -1,4 +1,4 @@
-package edu.gatech.gtevents.gtevents.feedscreen;
+package edu.gatech.gtevents.gtevents.feedscreen.eventfeedfragment;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -25,6 +25,7 @@ public class EventFeedListAdapter extends BaseAdapter {
     public EventFeedListAdapter(Context context) {
         eventList = new ArrayList<>();
         this.context = context;
+        refreshList();
     }
 
     @Override

@@ -5,8 +5,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ListView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/eventListView" />
+        android:layout_height="match_parent">
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventListView" />
+
+        <ImageButton
+            android:layout_width="@dimen/create_event_button_size"
+            android:layout_height="@dimen/create_event_button_size"
+            android:id="@+id/createEventButton"
+            android:contextClickable="true"
+            android:src="@drawable/twitter_icon"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerCrop" />
+    </RelativeLayout>
 </LinearLayout>

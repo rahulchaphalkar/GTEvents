@@ -6,6 +6,8 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import edu.gatech.gtevents.gtevents.R;
+import edu.gatech.gtevents.gtevents.feedscreen.eventfeedfragment.EventListFeedFragment;
+import edu.gatech.gtevents.gtevents.feedscreen.myeventsfragment.MyEventsFragment;
 
 /**
  * A FragmentPagerAdapter implementation for the feed screen.
@@ -30,7 +32,7 @@ public class FeedScreenFragmentPagerAdapter extends FragmentPagerAdapter {
         tabTitles[2] = context.getResources().getString(R.string.feed_tab3_name);
 
         frag1 = EventListFeedFragment.newInstance();
-        frag2 = EventListFeedFragment.newInstance();
+        frag2 = MyEventsFragment.newInstance();
         frag3 = EventListFeedFragment.newInstance();
     }
 

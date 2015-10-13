@@ -13,4 +13,7 @@
 
     <!-- Event List Feed Item Height. -->
     <dimen name="event_list_item_height">64dp</dimen>
+
+    <!-- Event list feed create event button size. -->
+    <dimen name="create_event_button_size">96dp</dimen>
 </resources>
