@@ -17,6 +17,8 @@
 
     <!-- Error Message. -->
     <string name="error_message">Invalid Credentials</string>
+    <!-- End of Login Screen Values. -->
+
 
     <!-- Event Creation Screen Values. -->
     <!-- Event Creation Title. -->
@@ -51,4 +53,17 @@
 
     <!-- Event creation failed. -->
     <string name="event_create_fail">Could not create event</string>
+    <!-- End of Event Creation Screen Values. -->
+
+
+    <!-- Feed Screen Values. -->
+    <!-- Tab 1 name. -->
+    <string name="feed_tab1_name">Feed</string>
+
+    <!-- Tab 2 name. -->
+    <string name="feed_tab2_name">My Events</string>
+
+    <!-- Tab 3 name. -->
+    <string name="feed_tab3_name">Saved Events</string>
+    <!-- End of Feed Screen Values. -->
 </resources>

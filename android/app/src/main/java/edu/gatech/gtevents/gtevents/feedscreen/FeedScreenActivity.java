@@ -1,6 +1,8 @@
 package edu.gatech.gtevents.gtevents.feedscreen;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +15,7 @@ public class FeedScreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feed_screen);
+        setUpTabs();
     }
 
     @Override
@@ -35,5 +38,16 @@ public class FeedScreenActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Instantiates the different tabs.
+     */
+    private void setUpTabs() {
+        ViewPager viewPager = ((ViewPager) findViewById(R.id.feed_view_pager));
+        viewPager.setAdapter(new FeedScreenFragmentPagerAdapter(getSupportFragmentManager(), this));
+
+        TabLayout tabLayout = ((TabLayout) findViewById(R.id.feed_tab_layout_bar));
+        tabLayout.setupWithViewPager(viewPager);
     }
 }
