@@ -3,7 +3,6 @@
     <string name="action_settings">Settings</string>
 
     <!-- Login Screen Values. -->
-
     <!-- Login Title. -->
     <string name="login_title">GT Login</string>
 
@@ -18,4 +17,38 @@
 
     <!-- Error Message. -->
     <string name="error_message">Invalid Credentials</string>
+
+    <!-- Event Creation Screen Values. -->
+    <!-- Event Creation Title. -->
+    <string name="event_creation_title">Create Event</string>
+
+    <!-- Event Name Label. -->
+    <string name="event_name_label">Event Name :</string>
+
+    <!-- Organization Label. -->
+    <string name="organization_label">Organization :</string>
+
+    <!-- Time Label. -->
+    <string name="time_label">Time :</string>
+
+    <!-- Location Label. -->
+    <string name="location_label">Location :</string>
+
+    <!-- Description Label. -->
+    <string name="description_label">Description :</string>
+
+    <!-- Create Event Button. -->
+    <string name="create_event_label">Create Event!</string>
+
+    <!-- Locations Array. -->
+    <string-array name="locations_array">
+        <item>CRC</item>
+        <item>Student Center</item>
+        <item>COC</item>
+        <item>CULC</item>
+        <item>Bobby Dodd</item>
+    </string-array>
+
+    <!-- Event creation failed. -->
+    <string name="event_create_fail">Could not create event</string>
 </resources>
