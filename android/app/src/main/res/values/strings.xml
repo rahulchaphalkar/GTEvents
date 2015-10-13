@@ -4,6 +4,9 @@
 
     <!-- Login Screen Values. -->
 
+    <!-- Login Title. -->
+    <string name="login_title">GT Login</string>
+
     <!-- Username label. -->
     <string name="username_label">Username :</string>
 
@@ -12,4 +15,7 @@
 
     <!-- Login button label. -->
     <string name="login_label">Login</string>
+
+    <!-- Error Message. -->
+    <string name="error_message">Invalid Credentials</string>
 </resources>
