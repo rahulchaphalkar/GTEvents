@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -15,14 +16,17 @@
             android:id="@+id/eventListView" />
 
         <ImageButton
-            android:layout_width="@dimen/create_event_button_size"
-            android:layout_height="@dimen/create_event_button_size"
+            android:layout_width="@dimen/social_icon_width"
+            android:layout_height="@dimen/social_icon_width"
             android:id="@+id/createEventButton"
             android:contextClickable="true"
-            android:src="@drawable/twitter_icon"
+            android:src="@drawable/ic_add_circle_white_48dp"
             android:layout_alignParentEnd="false"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
-            android:scaleType="centerCrop" />
+            android:backgroundTint="@color/colorBackground"
+            android:baselineAlignBottom="false"
+            android:tint="@color/colorAccent"
+            android:scaleType="fitXY" />
     </RelativeLayout>
 </LinearLayout>

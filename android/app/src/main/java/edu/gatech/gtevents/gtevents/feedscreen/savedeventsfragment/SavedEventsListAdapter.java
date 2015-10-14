@@ -59,8 +59,6 @@ public class SavedEventsListAdapter extends BaseAdapter implements AdapterView.O
         ((TextView) convertView.findViewById(
                 R.id.eventDescriptionTextView)).setText(event.description);
         ((TextView) convertView.findViewById(R.id.eventTimeTextView)).setText(event.time);
-        ((TextView) convertView.findViewById(
-                R.id.eventOrganizationTextView)).setText(event.organization);
 
         return convertView;
     }

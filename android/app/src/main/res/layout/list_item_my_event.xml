@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="@dimen/event_list_item_height">
+    android:layout_width="match_parent" android:layout_height="@dimen/event_list_item_height"
+    android:background="@color/colorBackground">
 
     <TextView
+        style="@style/ListItemText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
@@ -11,6 +13,7 @@
         android:layout_centerVertical="true" />
 
     <TextView
+        style="@style/ListItemText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
@@ -18,11 +21,12 @@
         android:layout_alignParentTop="false"
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false"
-        android:layout_alignParentBottom="false"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/eventNameTextView" />
+        android:textColor="@color/colorTextSecondary" />
 
     <TextView
+        style="@style/ListItemText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="New Text"
