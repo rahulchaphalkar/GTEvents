@@ -24,7 +24,7 @@ public class EventDetailActivity extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
         event = bundle.getParcelable(EVENT_KEY);
 
-        getSupportActionBar().setTitle(event.name);
+        getSupportActionBar().setTitle(event.getName());
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         populateFields();
@@ -58,10 +58,10 @@ public class EventDetailActivity extends AppCompatActivity {
      * Fills in the text fields with the appropriate values.
      */
     private void populateFields() {
-        ((TextView) findViewById(R.id.eventNameTextView)).setText(event.name);
-        ((TextView) findViewById(R.id.eventDescriptionTextView)).setText(event.description);
-        ((TextView) findViewById(R.id.eventTimeTextView)).setText(event.time);
-        ((TextView) findViewById(R.id.eventOrganizationTextView)).setText(event.organization);
-        ((TextView) findViewById(R.id.eventLocationTextView)).setText(event.location);
+        ((TextView) findViewById(R.id.eventNameTextView)).setText(event.getName());
+        ((TextView) findViewById(R.id.eventDescriptionTextView)).setText(event.getDescription());
+        ((TextView) findViewById(R.id.eventTimeTextView)).setText(event.getTime());
+        ((TextView) findViewById(R.id.eventOrganizationTextView)).setText(event.getOrganization());
+        ((TextView) findViewById(R.id.eventLocationTextView)).setText(event.getLocation());
     }
 }

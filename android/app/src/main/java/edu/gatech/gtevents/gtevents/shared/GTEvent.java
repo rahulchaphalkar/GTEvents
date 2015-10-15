@@ -8,13 +8,11 @@ import android.os.Parcelable;
  * native frontend.
  */
 public class GTEvent implements Parcelable {
-    // TODO (acalabrese): I don't think these need to be private, however, we are going to need to
-    // come up with some utils to convert to and from JSON.
-    public String name;
-    public String description;
-    public String time;
-    public String location;
-    public String organization;
+    protected String name;
+    protected String description;
+    protected String time;
+    protected String location;
+    protected String organization;
 
     public GTEvent() {}
 
@@ -50,5 +48,75 @@ public class GTEvent implements Parcelable {
         dest.writeString(time);
         dest.writeString(location);
         dest.writeString(organization);
+    }
+
+    /**
+     * @returns the name of the event.
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @returns the description of the event.
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /**
+     * @returns the time string of the event.
+     */
+    public String getTime() {
+        return time;
+    }
+
+    /**
+     * @returns the location of the event.
+     */
+    public String getLocation() {
+        return location;
+    }
+
+    /**
+     * @returns the name of the event.
+     */
+    public String getOrganization() {
+        return organization;
+    }
+
+    /**
+     * Sets the name of the event.
+     */
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * Sets the description of the event.
+     */
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    /**
+     * Sets the time string of the event.
+     */
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+    /**
+     * Sets the location of the event.
+     */
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * Sets the organization of the event.
+     */
+    public void setOrganization(String organization) {
+        this.organization = organization;
     }
 }

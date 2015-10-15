@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:text="New Text"
         android:id="@+id/eventNameTextView"
-        android:layout_toLeftOf="@+id/likeButton" />
+        android:layout_alignParentLeft="true" />
 
     <TextView
         style="@style/ListItemText"
@@ -36,8 +36,8 @@
         android:layout_alignParentRight="false"
         android:layout_alignParentEnd="false"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/likeButton"
-        android:textColor="@color/colorTextSecondary" />
+        android:textColor="@color/colorTextSecondary"
+        android:layout_alignParentLeft="true" />
 
     <TextView
         style="@style/ListItemText"
@@ -46,5 +46,6 @@
         android:text="New Text"
         android:id="@+id/eventTimeTextView"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true" />
+        android:layout_alignParentLeft="false"
+        android:layout_toLeftOf="@+id/likeButton" />
 </RelativeLayout>
