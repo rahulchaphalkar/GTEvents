@@ -16,17 +16,19 @@
             android:id="@+id/eventListView" />
 
         <ImageButton
-            android:layout_width="@dimen/social_icon_width"
-            android:layout_height="@dimen/social_icon_width"
+            android:layout_width="@dimen/create_event_button_size"
+            android:layout_height="@dimen/create_event_button_size"
             android:id="@+id/createEventButton"
             android:contextClickable="true"
             android:src="@drawable/ic_add_circle_white_48dp"
             android:layout_alignParentEnd="false"
             android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            android:backgroundTint="@color/colorBackground"
             android:baselineAlignBottom="false"
             android:tint="@color/colorAccent"
-            android:scaleType="fitXY" />
+            android:scaleType="fitXY"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/rounded_button"
+            android:layout_marginRight="@dimen/create_event_button_margin"
+            android:layout_marginBottom="@dimen/create_event_button_margin" />
     </RelativeLayout>
 </LinearLayout>

@@ -71,7 +71,7 @@ public class SavedEventsListAdapter extends BaseAdapter implements AdapterView.O
         // TODO (acalabrese): There should be some communication with the server here.
         eventList.clear();
 
-        for (int i = 0 ; i < 3 ; i++) {
+        for (int i = 0 ; i < 20 ; i++) {
             GTEvent temp = new GTEvent();
             temp.setDescription("Test Description " + i);
             temp.setName("Test Name " + i);
