@@ -2,6 +2,8 @@ package edu.gatech.gtevents.gtevents.feedscreen.eventfeedfragment;
 
 import android.content.Context;
 import android.content.Intent;
+import android.provider.CalendarContract;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +11,13 @@ import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.ImageButton;
 import android.widget.TextView;
+
+import com.parse.FindCallback;
+import com.parse.GetCallback;
+import com.parse.Parse;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -75,7 +84,34 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
         // TODO (acalabrese): There should be some communication with the server here.
         eventList.clear();
 
-        for (int i = 0 ; i < 20 ; i++) {
+        ParseQuery<ParseObject> query = ParseQuery.getQuery("Events");
+        query.findInBackground(new FindCallback<ParseObject>() {
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e == null) {
+                    for (ParseObject product : objects) {
+                        String eventname        = product.getString("EventName");
+                        String organization     = product.getString("Organization");
+                        String location         = product.getString("Location");
+                        String description      = product.getString("Description");
+                        String time             = product.getString("EventTime");
+
+                        GTEvent temp = new GTEvent();
+                        temp.setName(eventname);
+                        temp.setOrganization(organization);
+                        temp.setLocation(location);
+                        temp.setDescription(description);
+                        temp.setTime(time);
+                        eventList.add(temp);
+                    }
+                } else {
+                    // Do nothing
+                }
+            }
+        });
+
+
+
+        /*for (int i = 0 ; i < 20 ; i++) {
             GTEvent temp = new GTEvent();
             temp.setDescription("Test Description " + i);
             temp.setName("Test Name " + i);
@@ -83,7 +119,7 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
             temp.setLocation("Temp Location " + i);
             temp.setOrganization("Temp Organization " + i);
             eventList.add(temp);
-        }
+        }*/
 
         return true;
     }
