@@ -4,6 +4,10 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+    <!-- Splash Screen Values. -->
+    <!-- Title text size. -->
+    <dimen name="splash_screen_text_size">44dp</dimen>
+
     <!-- App wide dimensions. -->
     <!-- Padding for text. -->
     <dimen name="text_padding">3dp</dimen>
@@ -36,4 +40,15 @@
 
     <!-- Event description text size. -->
     <dimen name="event_detail_description_text_size">18sp</dimen>
+
+    <!-- Login Screen Values. -->
+    <!-- Screen padding. -->
+    <dimen name="login_screen_padding">20dp</dimen>
+
+    <!-- Event Creation Screen Values. -->
+    <!-- Screen padding. -->
+    <dimen name="event_creation_screen_padding">10dp</dimen>
+
+    <!-- Input text paddings. -->
+    <dimen name="event_creation_screen_edit_text_padding">5dp</dimen>
 </resources>
