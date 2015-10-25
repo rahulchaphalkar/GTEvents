@@ -65,5 +65,9 @@
 
     <!-- Tab 3 name. -->
     <string name="feed_tab3_name">Saved Events</string>
+
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
     <!-- End of Feed Screen Values. -->
 </resources>

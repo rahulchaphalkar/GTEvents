@@ -5,93 +5,109 @@
     android:background="@color/colorBackground">
 
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/eventNameLayout">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/event_name_label"
-            android:id="@+id/eventNameLabel" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/eventNameEditText"
-            android:minWidth="@dimen/edit_text_length" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
+        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/organizationLayout">
+        android:id="@+id/inputLinearLayout"
+        android:layout_marginLeft="@dimen/event_creation_screen_padding"
+        android:layout_marginRight="@dimen/event_creation_screen_padding">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/eventNameLayout"
+            android:layout_margin="@dimen/event_creation_screen_edit_text_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/event_name_label"
+                android:id="@+id/eventNameLabel" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/eventNameEditText"
+                android:minWidth="@dimen/edit_text_length" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/organizationLayout"
+            android:layout_margin="@dimen/event_creation_screen_edit_text_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/organization_label"
+                android:id="@+id/organizationLabel" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/organizationEditText"
+                android:minWidth="@dimen/edit_text_length" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/timeLayout"
+            android:layout_margin="@dimen/event_creation_screen_edit_text_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/time_label"
+                android:id="@+id/timeLabel" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="time"
+                android:ems="10"
+                android:id="@+id/timeEditText" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/locationLayout"
+            android:layout_margin="@dimen/event_creation_screen_edit_text_padding">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/location_label"
+                android:id="@+id/locationLabel" />
+
+            <Spinner
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/locationSpinner" />
+        </LinearLayout>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/organization_label"
-            android:id="@+id/organizationLabel" />
+            android:text="@string/description_label"
+            android:id="@+id/descriptionLabel"
+            android:layout_margin="@dimen/event_creation_screen_edit_text_padding" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/organizationEditText"
-            android:minWidth="@dimen/edit_text_length" />
+            android:id="@+id/descriptionEditText"
+            android:minWidth="@dimen/edit_text_length"
+            android:layout_margin="@dimen/event_creation_screen_edit_text_padding" />
     </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/timeLayout">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/time_label"
-            android:id="@+id/timeLabel" />
-
-        <EditText
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:inputType="time"
-            android:ems="10"
-            android:id="@+id/timeEditText" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/locationLayout">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/location_label"
-            android:id="@+id/locationLabel" />
-
-        <Spinner
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/locationSpinner" />
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/description_label"
-        android:id="@+id/descriptionLabel" />
-
-    <EditText
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/descriptionEditText"
-        android:minWidth="@dimen/edit_text_length" />
 
     <LinearLayout
         android:orientation="horizontal"

@@ -2,19 +2,14 @@ package edu.gatech.gtevents.gtevents.feedscreen.eventfeedfragment;
 
 import android.content.Context;
 import android.content.Intent;
-import android.provider.CalendarContract;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.parse.FindCallback;
-import com.parse.GetCallback;
-import com.parse.Parse;
 import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.ParseQuery;
@@ -57,7 +52,7 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView==null) {
             LayoutInflater inflater =
                     (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -71,7 +66,10 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
                 R.id.eventDescriptionTextView)).setText(event.getDescription());
         ((TextView) convertView.findViewById(R.id.eventTimeTextView)).setText(event.getTime());
 
-        ((ImageButton) convertView.findViewById(R.id.likeButton)).setFocusable(false);
+        convertView.findViewById(R.id.likeButton).setFocusable(false);
+
+        convertView.findViewById(R.id.likeButton).setOnClickListener(
+                new ItemLikeButtonListener(position));
 
         return convertView;
     }
@@ -89,11 +87,11 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
             public void done(List<ParseObject> objects, ParseException e) {
                 if (e == null) {
                     for (ParseObject product : objects) {
-                        String eventname        = product.getString("EventName");
-                        String organization     = product.getString("Organization");
-                        String location         = product.getString("Location");
-                        String description      = product.getString("Description");
-                        String time             = product.getString("EventTime");
+                        String eventname = product.getString("EventName");
+                        String organization = product.getString("Organization");
+                        String location = product.getString("Location");
+                        String description = product.getString("Description");
+                        String time = product.getString("EventTime");
 
                         GTEvent temp = new GTEvent();
                         temp.setName(eventname);
@@ -103,6 +101,7 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
                         temp.setTime(time);
                         eventList.add(temp);
                     }
+                    notifyDataSetChanged();
                 } else {
                     // Do nothing
                 }
@@ -129,5 +128,18 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
         Intent intent = new Intent(context, EventDetailActivity.class);
         intent.putExtra(EventDetailActivity.EVENT_KEY, eventList.get(position));
         context.startActivity(intent);
+    }
+
+    private class ItemLikeButtonListener implements View.OnClickListener {
+        private int position;
+
+        public ItemLikeButtonListener(int position) {
+            this.position = position;
+        }
+
+        @Override
+        public void onClick(View v) {
+            // TODO(acalabrese): Update the view and server here.
+        }
     }
 }

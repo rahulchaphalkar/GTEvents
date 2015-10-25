@@ -4,6 +4,10 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+    <!-- Splash Screen Values. -->
+    <!-- Title text size. -->
+    <dimen name="splash_screen_text_size">44dp</dimen>
+
     <!-- App wide dimensions. -->
     <!-- Padding for text. -->
     <dimen name="text_padding">3dp</dimen>
@@ -16,11 +20,35 @@
     <dimen name="edit_text_length">100dp</dimen>
 
     <!-- Event List Feed Item Height. -->
-    <dimen name="event_list_item_height">64dp</dimen>
+    <dimen name="event_list_item_height">96dp</dimen>
 
     <!-- Event list feed create event button size. -->
     <dimen name="create_event_button_size">64dp</dimen>
 
     <!-- The margins on the right and bottom of the create event button. -->
     <dimen name="create_event_button_margin">20dp</dimen>
+
+    <!-- Event Detail Screen Values. -->
+    <!-- Padding for text. -->
+    <dimen name="event_detail_text_padding">10dp</dimen>
+
+    <!-- Event name text size. -->
+    <dimen name="event_detail_name_text_size">36sp</dimen>
+
+    <!-- Event alt text size. -->
+    <dimen name="event_detail_alt_text_size">24sp</dimen>
+
+    <!-- Event description text size. -->
+    <dimen name="event_detail_description_text_size">18sp</dimen>
+
+    <!-- Login Screen Values. -->
+    <!-- Screen padding. -->
+    <dimen name="login_screen_padding">20dp</dimen>
+
+    <!-- Event Creation Screen Values. -->
+    <!-- Screen padding. -->
+    <dimen name="event_creation_screen_padding">10dp</dimen>
+
+    <!-- Input text paddings. -->
+    <dimen name="event_creation_screen_edit_text_padding">5dp</dimen>
 </resources>
