@@ -23,4 +23,17 @@
 
     <!-- The margins on the right and bottom of the create event button. -->
     <dimen name="create_event_button_margin">20dp</dimen>
+
+    <!-- Event Detail Screen Values. -->
+    <!-- Padding for text. -->
+    <dimen name="event_detail_text_padding">10dp</dimen>
+
+    <!-- Event name text size. -->
+    <dimen name="event_detail_name_text_size">36sp</dimen>
+
+    <!-- Event alt text size. -->
+    <dimen name="event_detail_alt_text_size">24sp</dimen>
+
+    <!-- Event description text size. -->
+    <dimen name="event_detail_description_text_size">18sp</dimen>
 </resources>
