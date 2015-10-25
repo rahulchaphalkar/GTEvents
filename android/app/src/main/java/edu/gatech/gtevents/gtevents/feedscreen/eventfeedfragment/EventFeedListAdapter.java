@@ -52,7 +52,7 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
+    public View getView(final int position, View convertView, ViewGroup parent) {
         if (convertView==null) {
             LayoutInflater inflater =
                     (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
@@ -67,6 +67,9 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
         ((TextView) convertView.findViewById(R.id.eventTimeTextView)).setText(event.getTime());
 
         convertView.findViewById(R.id.likeButton).setFocusable(false);
+
+        convertView.findViewById(R.id.likeButton).setOnClickListener(
+                new ItemLikeButtonListener(position));
 
         return convertView;
     }
@@ -125,5 +128,18 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
         Intent intent = new Intent(context, EventDetailActivity.class);
         intent.putExtra(EventDetailActivity.EVENT_KEY, eventList.get(position));
         context.startActivity(intent);
+    }
+
+    private class ItemLikeButtonListener implements View.OnClickListener {
+        private int position;
+
+        public ItemLikeButtonListener(int position) {
+            this.position = position;
+        }
+
+        @Override
+        public void onClick(View v) {
+            // TODO(acalabrese): Update the view and server here.
+        }
     }
 }
