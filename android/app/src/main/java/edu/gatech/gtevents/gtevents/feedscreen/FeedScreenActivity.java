@@ -7,9 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.parse.Parse;
-import com.parse.ParseObject;
-
 import edu.gatech.gtevents.gtevents.R;
 
 public class FeedScreenActivity extends AppCompatActivity {
@@ -17,8 +14,6 @@ public class FeedScreenActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        Parse.initialize(this, "dNPTwFKA6ysdtVN8Nz5YMmN0AAbT85cTOIZxOb2E", "VyasRjjlvSdSAauPCdXCLiZBfBePOOb53HNVUi4i");
         setContentView(R.layout.activity_feed_screen);
         setUpTabs();
     }

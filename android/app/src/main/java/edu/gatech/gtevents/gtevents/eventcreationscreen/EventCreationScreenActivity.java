@@ -10,8 +10,6 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import com.parse.ParseObject;
-
 import edu.gatech.gtevents.gtevents.R;
 
 /**
@@ -134,13 +132,6 @@ public class EventCreationScreenActivity extends AppCompatActivity implements Vi
 
         if (res) {
             // If we are successful, we can just finish the activity.
-            ParseObject event1 = new ParseObject("Events");
-            event1.put("EventName", name);
-            event1.put("Organization", organization);
-            event1.put("Location", location);
-            event1.put("Description", description);
-            event1.put("EventTime", time);
-            event1.saveInBackground();
             finish();
         } else {
             // If we are unsuccessful, we should notify the user.
