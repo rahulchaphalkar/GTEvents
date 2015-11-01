@@ -21,6 +21,7 @@ import edu.gatech.gtevents.gtevents.shared.GTEvent;
  * local list with events.
  */
 public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnItemClickListener {
+    public static final float BUTTON_OFF_ALPHA = 0.3f;
 
     private List<GTEvent> eventList;
     private Context context;
@@ -64,7 +65,10 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
         convertView.findViewById(R.id.likeButton).setFocusable(false);
 
         convertView.findViewById(R.id.likeButton).setOnClickListener(
-                new ItemLikeButtonListener(position));
+                new ItemLikeButtonListener(event));
+
+        convertView.findViewById(R.id.likeButton).setAlpha(
+                event.isSaved() ? 1.0f : BUTTON_OFF_ALPHA);
 
         return convertView;
     }
@@ -98,15 +102,19 @@ public class EventFeedListAdapter extends BaseAdapter implements AdapterView.OnI
     }
 
     private class ItemLikeButtonListener implements View.OnClickListener {
-        private int position;
+        private GTEvent event;
 
-        public ItemLikeButtonListener(int position) {
-            this.position = position;
+        public ItemLikeButtonListener(GTEvent event) {
+            this.event = event;
         }
 
         @Override
         public void onClick(View v) {
             // TODO(acalabrese): Update the view and server here.
+            if (v.getId() == R.id.likeButton) {
+                event.setSaved(!event.isSaved());
+                notifyDataSetInvalidated();
+            }
         }
     }
 }

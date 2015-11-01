@@ -13,6 +13,7 @@ public class GTEvent implements Parcelable {
     protected String time;
     protected String location;
     protected String organization;
+    protected boolean isSaved;
 
     public GTEvent() {}
 
@@ -22,6 +23,8 @@ public class GTEvent implements Parcelable {
         time = in.readString();
         location = in.readString();
         organization = in.readString();
+        // TODO(acalabrese): Need a way to set this.
+        isSaved = false;
     }
 
     public static final Creator<GTEvent> CREATOR = new Creator<GTEvent>() {
@@ -86,6 +89,13 @@ public class GTEvent implements Parcelable {
     }
 
     /**
+     * @returns if the event was saved or not.
+     */
+    public boolean isSaved() {
+        return isSaved;
+    }
+
+    /**
      * Sets the name of the event.
      */
     public void setName(String name) {
@@ -118,5 +128,12 @@ public class GTEvent implements Parcelable {
      */
     public void setOrganization(String organization) {
         this.organization = organization;
+    }
+
+    /**
+     * Sets whether or not the event is saved.
+     */
+    public void setSaved(boolean saved) {
+        isSaved = saved;
     }
 }
